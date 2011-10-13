@@ -1,11 +1,14 @@
 #!/usr/bin/lua
-require("bogus")
 
-print( "answer() tells us the answer is " .. bogus.answer() )
-print( "ANSWER tells us the answer is " .. bogus.ANSWER )
+-- Make sure we can load compiled Lua scripts (.lc)
+package.path = package.path .. ";./?.lc"
+require("foobar")
 
-print( "Sum of 1, 2, 3, 4 and 5 is " .. bogus.sum_args( 1, 2, 3, 4, 5 ) )
 
-bogus.greet()
-bogus.greet( "Arttu" )
+foobar = createNewObject()
+
+foobar:answer()
+foobar:sumArgs( 1, 2, 3 )
+foobar:greet()
+foobar:greetUser()
 

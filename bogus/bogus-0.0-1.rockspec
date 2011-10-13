@@ -22,8 +22,10 @@ dependencies = {
 --   }
 --}
 build = {
-   type = "command",
-   build_command = "cmake .. && make",
+   type = "cmake",
+   variables = {
+      CMAKE_BUILD_TYPE = "Release"
+   },
    modules = {
       bogus = {
          sources = {"bogus.cpp"},
