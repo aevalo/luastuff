@@ -3,14 +3,15 @@
 
 extern "C"
 {
+#define lboguslib_cpp
+#define LUA_LIB
+#ifdef WIN32
+#define LUA_BUILD_AS_DLL
+#endif
 #include "lua.h"
 #include "lauxlib.h"
 #include "lualib.h"
 }
-
-
-#define lboguslib_cpp
-#define LUA_LIB
 
 
 namespace
