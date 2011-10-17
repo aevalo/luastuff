@@ -1,4 +1,9 @@
 require("bogus")
+local print = print
+local io = io
+local bogus = bogus
+
+module("foobar");
 
 function createNewObject()
     local object = {}

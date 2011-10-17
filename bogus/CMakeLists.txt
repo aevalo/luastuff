@@ -14,7 +14,7 @@ target_link_libraries(bogus ${LUA_LIBRARIES})
 set_target_properties(bogus PROPERTIES PREFIX "" VERSION "${BOGUS_VERSION_MAJOR}.${BOGUS_VERSION_MINOR}.${BOGUS_VERSION_PATCH}" SOVERSION  "${BOGUS_VERSION_MAJOR}.${BOGUS_VERSION_MINOR}.${BOGUS_VERSION_PATCH}")
 
 add_custom_target(foobar ALL
-                    COMMAND luac -s -o ${CMAKE_BINARY_DIR}/foobar.lc foobar.lua
+                    COMMAND luac -o ${CMAKE_BINARY_DIR}/foobar.lc foobar.lua
                     WORKING_DIRECTORY ${CMAKE_HOME_DIRECTORY}
                     COMMENT "Compiling Lua module..."
                     VERBATIM

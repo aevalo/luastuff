@@ -4,8 +4,7 @@
 package.path = package.path .. ";?.lc"
 require("foobar")
 
-
-foobar = createNewObject()
+foobar = foobar.createNewObject()
 
 foobar:answer()
 foobar:sumArgs( 1, 2, 3 )
