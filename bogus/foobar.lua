@@ -1,7 +1,5 @@
+local _G = _G
 require("bogus")
-local print = print
-local io = io
-local bogus = bogus
 
 module("foobar");
 
@@ -9,22 +7,22 @@ function createNewObject()
     local object = {}
     
     function object.answer( self )
-        print( "answer() tells us the answer is " .. bogus.answer() )
-        print( "ANSWER tells us the answer is " .. bogus.ANSWER )
+        _G.print( "answer() tells us the answer is " .. _G.bogus.answer() )
+        _G.print( "ANSWER tells us the answer is " .. _G.bogus.ANSWER )
     end
     
     function object.sumArgs( self, a, b, c )
-        print( "Sum of " .. a .. ", " .. b .. " and " .. c .. " is " .. bogus.sum_args( a, b, c ) )
+        _G.print( "Sum of " .. a .. ", " .. b .. " and " .. c .. " is " .. _G.bogus.sum_args( a, b, c ) )
     end
     
     function object.greet( self )
-        bogus.greet()
+        _G.bogus.greet()
     end
     
     function object.greetUser( self )
-        io.write( "Please, introduce your self: " )
-        local name = io.read()
-        bogus.greet( name )
+        _G.io.write( "Please, introduce your self: " )
+        local name = _G.io.read()
+        _G.bogus.greet( name )
     end
     
     return object
