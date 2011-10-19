@@ -9,6 +9,8 @@
 ; Note that only rax, rcx, and rdx were used so no registers had to be saved
 ; and restored.
 ; ----------------------------------------------------------------------------   
+extern  _GLOBAL_OFFSET_TABLE_   ; in ELF 
+default rel
 
 global   maxofthree
 global   get_vendor_id
