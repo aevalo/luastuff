@@ -1,0 +1,22 @@
+project(libcpuid CXX)
+cmake_minimum_required(VERSION 2.8)
+
+set(CMAKE_MODULE_PATH "${CMAKE_HOME_DIRECTORY}/Modules")
+
+#enable_language(ASM-NASM)
+
+set(CPUID_VERSION_MAJOR 0)
+set(CPUID_VERSION_MINOR 0)
+set(CPUID_VERSION_PATCH 1)
+
+find_package(Lua51 REQUIRED)
+
+include_directories(${LUA_INCLUDE_DIR})
+
+add_library(cpuid SHARED cpuid_call.cpp )
+target_link_libraries(cpuid ${LUA_LIBRARIES})
+set_target_properties(cpuid PROPERTIES PREFIX "" VERSION "${CPUID_VERSION_MAJOR}.${CPUID_VERSION_MINOR}.${CPUID_VERSION_PATCH}" SOVERSION  "${CPUID_VERSION_MAJOR}.${CPUID_VERSION_MINOR}.${CPUID_VERSION_PATCH}")
+
+install(TARGETS cpuid DESTINATION bin)
+install(FILES test.lua DESTINATION bin PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_WRITE GROUP_EXECUTE)
+

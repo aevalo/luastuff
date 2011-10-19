@@ -3,3 +3,8 @@ build/
 build/*
 bin/
 bin/*
+tmp/
+tmp/*
+*.o
+*.so*
+
