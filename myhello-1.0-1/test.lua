@@ -1,0 +1,2 @@
+require("myhello")
+myhello.helloworld()
